@@ -2,12 +2,15 @@
   "name": "chatapp",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "build":"npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend",
-    "start":"npm run start --prefix Backend "
-  },
+ "scripts": {
+  "build": "npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend",
+  "start": "concurrently \"npm run start --prefix Backend\" \"npm run start --prefix Frontend\""
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
 }
